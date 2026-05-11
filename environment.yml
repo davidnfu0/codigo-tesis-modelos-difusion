@@ -1,0 +1,12 @@
+# Conda environment definition.
+# Create with: conda env create -f environment.yml
+# Update with: conda env update -f environment.yml --prune
+
+name: diffusion-models
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - pip
+  - pip:
+      - -e .[dev]

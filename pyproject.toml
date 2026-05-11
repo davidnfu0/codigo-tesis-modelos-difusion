@@ -1,0 +1,44 @@
+# Project metadata and dependencies (PEP 621).
+# Install in editable mode with: pip install -e .
+# Install with dev extras: pip install -e ".[dev]"
+
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "thesis-diffusion-models"
+version = "0.0.1"
+description = "Master's thesis code on diffusion models."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{ name = "David" }]
+license = { text = "MIT" }
+
+# Runtime dependencies. Add packages as the project grows.
+dependencies = [
+    # "torch",
+    # "numpy",
+    # "pyyaml",
+]
+
+[project.optional-dependencies]
+# Development and tooling dependencies.
+dev = [
+    "ruff",
+    "pytest",
+    "pre-commit",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W", "UP", "B"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

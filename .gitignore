@@ -61,3 +61,6 @@ runs/
 .env
 .env.*
 !.env.example
+
+# Jupyter notebooks
+notebooks/
